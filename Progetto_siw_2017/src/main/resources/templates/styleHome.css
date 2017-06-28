@@ -1,0 +1,13 @@
+.container {
+	position: relative;
+}
+
+.col-md-4 {
+	margin-top: 90px;
+	width: 25%;
+	float: right;
+}
+
+.panel {
+	width: 200px;
+}

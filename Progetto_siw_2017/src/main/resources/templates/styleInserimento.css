@@ -1,0 +1,14 @@
+.container {
+	position: relative;
+	width: 100%;
+}
+
+.inserimento {
+	width: 500px;
+	margin: 50px auto;
+	padding: 25px;
+	overflow: hidden;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+}

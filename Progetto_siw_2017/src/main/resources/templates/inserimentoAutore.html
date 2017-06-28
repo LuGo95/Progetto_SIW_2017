@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title> Inserimento Nuovo Autore </title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="styleInserimento.css" />
+</head>
+<body style="background-color: #4682B4">
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> 
+					<span class="icon-bar"> </span> 
+					<span class="icon-bar"> </span> 
+					<span class="icon-bar"> </span>
+				</button>
+				<a class="navbar-brand" href="index.html"> Home </a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="listaOpere.html">Tutti i Quadri <span class="sr-only">(current)</span> </a>
+					</li>		
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li> <a href="logout.html">Log-out</a> </li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<span class="container" style="margin-top: 100px">
+		<TABLE borderColor=red  cellSpacing=0 cellPadding=10 width="60%" align=center border=5>
+			<tr>
+				<td>
+					<div align="center">
+						<font size="6" face="verdala" color="gold"> Inserimento Nuovo Artista </font>
+					</div>
+				</td>
+			</tr>
+		</TABLE>
+		<div class=" inserimento">
+			<div class="a">
+				<form action="#" th:action="@{/inserimentoAutore}" th:object="${autore}" method="post">
+					<label for="nome">Nome</label><input type="text" class="form-control" id="nome" name="nome" />
+					<div></div>
+					<span th:if="${# fields.hasErrors('nome')}" th:text="{#label.mandatory}">error</span>
+					<div></div> <br></br>
+					<label for="cognome">Cognome</label> <input type="text" id="cognome" class="form-control" name="cognome" />
+					<div></div>
+					<span th:if="${#fields.hasErrors('cognome')}" th:text="#{label.mandatory}">error</span>
+					<div></div> <br></br>
+					<label for="nazionalita">Nazionalità</label> <input type="text" class="form-control" id="nazionalita" name="nazionalita" />
+					<div></div>
+					<span th:if="${#fields.hasErrors('nazionalita')}" th:text="#{label.mandatory}">error</span>
+					<div></div> <br></br>
+					<label for="dataNascita">Data di Nascita</label> <input type="text" class="form-control" id="data_nascita" name="data_nascita" placeholder="es. 01/01/2000" />
+					<div></div>
+					<span th:if="${#fields.hasErrors('dataNascita')}" th:text="#{label.mandatory}">error</span>
+					<div></div> <br></br>
+					<label for="dataMorte">Data di Morte</label> <input type="text" class="form-control" id="data_morte" name="data_morte" placeholder="es. 01/01/2000 (può essere vuota)" /><br></br>
+					<div class="form-actions">
+						<button type="submit" class="btn  btn-success">Inserisci</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</span>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

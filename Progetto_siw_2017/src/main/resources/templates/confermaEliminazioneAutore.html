@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Conferma Autore</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="styleAmm.css" />
+</head>
+<body style="background-color: #4682B4">
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"> Home </a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="menuAmministratore.html">
+							Indietro </a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<form th:action="@{/logout}" method="post">
+							<button type="submit" class="bottonelog">
+								<font color="white ">Log-out </font>
+							</button>
+						</form>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div>
+		<p th:text="'Vuoi eliminare il seguente autore? '" />
+	</div>
+	<div>
+		<p th:text="'Nome: ' + ${autore.nome}" />
+	</div>
+	<div>
+		<p th:text="'Cognome: ' + ${autore.cognome}" />
+	</div>
+	<div>
+		<p th:text="'Nazionalita': ' + ${autore.nazionalita}" />
+	</div>
+	<div>
+		<p th:text="'Data di nascita: ' + ${autore.data_nascita}" />
+	</div>
+	<div>
+		<p th:text="'Data di morte: ' + ${autore.data_morte}" />
+	</div>
+	<input type="hidden" th:value="${autore.id}" name="id" />
+	<button type="button" class="btn btn-danger">Conferma</button>
+</body>
+</html>
